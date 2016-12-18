@@ -23,7 +23,7 @@ input[type=text]:focus{
 #response-ul{
   list-style-type: none;
   width: 17em;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 .response-li{

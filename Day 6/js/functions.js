@@ -88,6 +88,7 @@ var answersList = document.querySelectorAll('.response-li');
 
 window.addEventListener('keydown', moveUpDown);
 document.querySelector('input').addEventListener('input', getInput);
+document.querySelector('form').addEventListener('keydown', moveUpDown);
 
 window.onload = function(){
   response = getResponse();
