@@ -1,0 +1,56 @@
+
+.clock-div{
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  border: 15px solid #e0e0e0;
+  z-index: 100;
+}
+
+#second{
+  position: relative;
+  top: 10%;
+  left: 50%;
+  height: 40%;
+  width: 2px;
+  background-color: red;
+}
+
+.clock-div::before{
+  content: "";
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(50% - 10px);
+  height: 20px;
+  width: 20px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  z-index: 100;
+}
+
+#minute{
+  position: relative;
+  top: -60%;
+  left: 50%;
+  height: 35%;
+  width: 3px;
+  background-color: black;
+}
+
+#hour{
+  position: relative;
+  top: -25%;
+  left: 50%;
+  height: 35%;
+  width: 2.5px;
+  background-color: blue;
+}
+
+.hand{
+  transition: all 0.05s;
+  transition-timing-function: unset;
+  transform-origin: 0% 100%;
+}

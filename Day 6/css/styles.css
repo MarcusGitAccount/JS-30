@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+form{
+  margin: 20px 100px;
+}
+
+input[type=text]{
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  padding: .5em 2em;
+  font-size: 16px;
+  border-color: #616161;
+  box-shadow: 0px 0px 0px 2px #616161 inset, 0px 0px 0px 4px white inset;
+}
+
+input[type=text]:focus{
+  outline: none;
+}
+
+#response-ul{
+  list-style-type: none;
+  width: 17em;
+  overflow-y: scroll;
+}
+
+.response-li{
+  padding: 0.25em 0.5em;
+  border: 1px solid black;
+  width: 15em;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.response-li:nth-last-of-type(2n){
+  transform: skewX(10deg);
+}
+
+.response-li:nth-last-of-type(2n+1){
+  transform: skewX(-10deg);
+}
+
+.li-outline{
+  outline: #00e5ff solid 3px;
+  background-color: #e0e0e0;
+  color: #00c853;
+}

@@ -1,0 +1,29 @@
+
+.key{
+  width: 50px;
+  height: 50px;
+  margin: 30px;
+  background-color: lawngreen;  
+  float: left;
+  text-align: center;
+  font-size: 18px;
+}
+
+.keys{
+  display: inline-block;
+  top: 30%;
+  left: calc(50% - 520px);
+  position: absolute;
+}
+
+.keydown{
+  background-color: greenyellow;
+  border: 5px solid red;
+  transform: scale(1.1);
+  transition: 0.25s;
+}
+
+.span-sound{
+  display: block;
+  font-size: 14px;
+}

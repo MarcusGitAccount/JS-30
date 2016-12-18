@@ -1,0 +1,28 @@
+
+:root{
+  --blur: 20px;
+  --margin: 50px;
+  --color: #ffffff;
+}
+
+p{
+  color: var(--color);
+}
+
+body{
+  background-color: var(--color);
+}
+
+img{
+  width: 50%;
+  height: 75%;
+  filter: blur(var(--blur));
+}
+
+h1, img{
+  margin-left: var(--margin);
+}
+
+input[type=range]{
+  background-color: yellow;
+}
