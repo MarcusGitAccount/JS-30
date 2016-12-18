@@ -23,20 +23,25 @@ function getResponse(){
 
 function moveUpDown(e){
   if (e.keyCode === 40 && currentLiIndex < answersList.length){
+    document.querySelector('input[type=text]').value = answersList[currentLiIndex].innerHTML.match(/[A-Za-z]+/g).join(' ');
     answersList[currentLiIndex].classList.add('li-outline');
     if (previousLiIndex >= 0)
       answersList[previousLiIndex].classList.remove('li-outline');
     if (currentLiIndex + 1 < answersList.length)
       currentLiIndex++;
     previousLiIndex = currentLiIndex - 1;
+    window.scrollBy(0, 50);
   }
   else if (e.keyCode === 38 && currentLiIndex > 0){
+    document.querySelector('input[type=text]').value = answersList[previousLiIndex].innerHTML.match(/[A-Za-z]+/g).join(' ');
     answersList[previousLiIndex].classList.add('li-outline');
     answersList[currentLiIndex--].classList.remove('li-outline');
     previousLiIndex = currentLiIndex - 1;
     if (previousLiIndex === -1)
       previousLiIndex = currentLiIndex++;
   }
+  else if (e.keyCode === 13)
+    return false;
 }
 
 function getInput(){
@@ -44,6 +49,8 @@ function getInput(){
   let result = []; 
   let ul   = document.querySelector('#response-ul');
 
+  if (text.length < 2)
+    return;
   while (ul.firstChild)
     ul.removeChild(ul.firstChild);
   console.log(ul);
@@ -62,12 +69,26 @@ function getInput(){
   });
   
   answersList = document.querySelectorAll('.response-li');
+  answersList.forEach(li => li.addEventListener('mousedown', liMouseDown));
   console.log(text);
+}
+
+function liMouseDown(e){
+  document.querySelector('input[type=text]').focus();
+  answersList.forEach(li => li.classList.remove('li-outline'));
+  currentLiIndex = Array.from(document.querySelectorAll('.response-li')).indexOf(this);
+  previousLiIndex = currentLiIndex - 1;
+  document.querySelector('input[type=text]').value = answersList[currentLiIndex].innerHTML.match(/[A-Za-z]+/g).join(' ');
+  answersList[currentLiIndex].classList.add('li-outline');
 }
 
 var currentLiIndex = 0;
 var previousLiIndex = -1;
 var answersList = document.querySelectorAll('.response-li');
 
-document.querySelector('form').addEventListener('keydown', moveUpDown);
+window.addEventListener('keydown', moveUpDown);
 document.querySelector('input').addEventListener('input', getInput);
+
+window.onload = function(){
+  response = getResponse();
+}
