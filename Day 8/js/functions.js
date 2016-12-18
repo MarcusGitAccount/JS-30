@@ -17,7 +17,7 @@ context.strokeStyle = `hsl(${hue}, 100%, 50%)`;
 context.lineJoin = 'round';
 context.lineCap = 'round';
 context.lineWidth = 10;
-context.globalCompositeOperation = 'multiply';
+//context.globalCompositeOperation = 'multiply';
 
 function draw(e){
   if (!isDrawing)
