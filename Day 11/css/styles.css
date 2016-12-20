@@ -1,4 +1,12 @@
 
-input[type=range]{
-  margin-top: 5px;
+.progress{
+  display: flex;
+  flex-direction: row;
+  height: 5px;
+}
+
+.progress__filled{
+  flex-basis: 0;
+  background-color: red;
+  height: 5px;
 }
