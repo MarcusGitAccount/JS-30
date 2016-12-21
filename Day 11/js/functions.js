@@ -7,12 +7,15 @@ let skipButtons = player.querySelectorAll('[data-skip]');
 let ranges = player.querySelectorAll('.player__slider');
 let toggle = player.querySelector('.toggle');
 let volumeIcon = player.querySelector('#volume-i');
+let timeset = player.querySelector('#time');
+let fullscreenIcon = player.querySelector('#fullscreen');
+let progressMouseDown = false;
 
 function toggleFullscreen(e){
-  if (!this.webkitDisplayingFullscreen)
-    this.webkitEnterFullScreen();
+  if (!video.webkitDisplayingFullscreen)
+    video.webkitEnterFullScreen();
   else
-    this.webkitExitFullScreen();
+    video.webkitExitFullScreen();
 }
 
 function togglePauseKeyDown(e){
@@ -39,7 +42,17 @@ function skipVideoTime(e){
   const skipValue = this.dataset.skip;
 
   video.currentTime += parseInt(skipValue);
-  console.log(skipValue);
+}
+
+function getTime(){
+  let result  = '';
+  let seconds = parseInt(video.currentTime % 60);
+  let minutes = parseInt(video.currentTime / 60);
+
+  result += minutes < 10 ? '0' + minutes : minutes;
+  result += seconds < 10 ? ':0' + seconds : ':' + seconds;
+
+  return result;
 }
 
 function handleProgressBar(e){
@@ -47,8 +60,8 @@ function handleProgressBar(e){
 
   if (percent === 100)
     video.pause();
-  console.log(percent);
   progressBar.style.flexBasis = `${percent}%`;
+  timeset.innerHTML = getTime();
 }
 
 function handleRepeatVideo(e){
@@ -62,7 +75,12 @@ function handleRepeatVideo(e){
   replayElement.className = "fa fa-repeat";
   toggle.innerHTML = "";
   toggle.appendChild(replayElement);
-  console.log(replayElement);
+}
+
+function getProgressTime(e){
+  let time = e.offsetX / progress.offsetWidth * video.duration;
+
+  video.currentTime = time;
 }
 
 video.addEventListener('dblclick', toggleFullscreen);
@@ -75,4 +93,9 @@ toggle.addEventListener('click', togglePauseClick);
 ranges[0].addEventListener('input', changePlaybackRate)
 ranges[1].addEventListener('input', changeVolumeIcon)
 skipButtons.forEach(button => button.addEventListener('click', skipVideoTime));
+fullscreenIcon.addEventListener('click', toggleFullscreen);
+progress.addEventListener('click', getProgressTime);
+progress.addEventListener('mousemove', (e) => progressMouseDown && getProgressTime(e));
+progress.addEventListener('mousedown', (e) => progressMouseDown = true);
+progress.addEventListener('mouseup', (e) => progressMouseDown = false);
 window.addEventListener('keydown', togglePauseKeyDown);
