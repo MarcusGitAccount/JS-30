@@ -45,14 +45,31 @@ function skipVideoTime(e){
 function handleProgressBar(e){
   let percent = (video.currentTime / video.duration) * 100;
 
+  if (percent === 100)
+    video.pause();
   console.log(percent);
   progressBar.style.flexBasis = `${percent}%`;
 }
 
+function handleRepeatVideo(e){
+  console.log('it ended');
+
+  let replayElement = document.createElement('i');
+  let ariaHidden = document.createAttribute('aria-hidden');
+
+  ariaHidden.value = true;
+  replayElement.setAttributeNode(ariaHidden);
+  replayElement.className = "fa fa-repeat";
+  toggle.innerHTML = "";
+  toggle.appendChild(replayElement);
+  console.log(replayElement);
+}
+
 video.addEventListener('dblclick', toggleFullscreen);
 video.addEventListener('click', togglePauseClick);
-video.addEventListener('pause', () => toggle.innerHTML = "&#9612; &#9612;");
-video.addEventListener('play', () => toggle.innerHTML = "&#9658;");
+video.addEventListener('pause', () => toggle.innerHTML = "&#9658;");
+video.addEventListener('play', () => toggle.innerHTML = "&#10074;&#10074;");
+video.addEventListener('ended', handleRepeatVideo);
 video.addEventListener('timeupdate', handleProgressBar);
 toggle.addEventListener('click', togglePauseClick);
 ranges[0].addEventListener('input', changePlaybackRate)
