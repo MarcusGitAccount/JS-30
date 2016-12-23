@@ -1,0 +1,42 @@
+
+article{
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  right: 20%;
+  margin-bottom: 10px;
+  border: 1px solid grey;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: -1px 0px 20px 2px grey;
+}
+
+.image-left{
+  float: left;
+  margin: 10px;
+  margin-left: 0;
+}
+
+.image-right{
+  float: right;
+  margin: 10px;
+  margin-right: 0;
+}
+
+.image-left.slide-in{
+  transform: translateX(-50%) scale(0.85);
+}
+
+.image-right.slide-in{
+  transform: translateX(50%) scale(0.85);
+}
+
+.slide-in{
+  opacity: 0;
+  transition: all .5s;
+}
+
+.slide-in.active{
+  transform: translateX(0%) scale(1);
+  opacity: 1;
+}
