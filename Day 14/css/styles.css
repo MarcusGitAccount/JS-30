@@ -1,0 +1,22 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.tapas-div{
+  position: absolute;
+  width: 300px;
+  top: 20%;
+  left: calc(50% - 150px);
+}
+
+#tapas-ul>li {
+  display: flex;
+  flex-direction: row;
+}
+
+#tapas-ul>li>.fa{
+  flex: 0.1;
+}
