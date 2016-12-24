@@ -1,7 +1,5 @@
 
-let oldDate = localStorage.getItem('date') || (new Date());
-
-//localStorage.setItem('date', 72);
+localStorage.setItem('tapas', [{name}]);
 
 
 function checkboxClick(e){
