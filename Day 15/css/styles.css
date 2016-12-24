@@ -1,0 +1,64 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+h3{
+  text-align: center;
+}
+
+.tapas-div{
+  position: absolute;
+  width: 300px;
+  top: 20%;
+  left: calc(50% - 150px);
+}
+
+#tapas>ul{
+  position: relative;
+}
+
+#tapas-ul>li {
+  position: relative;
+  list-style-type: none;
+  padding: .5em 0;
+  border-bottom: .5px solid black;
+}
+
+#tapas-ul>li>.fa{
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+
+input[type=text]{
+  position: absolute;
+  padding: .75em .45em;
+  left: 15px;
+  
+}
+
+input[type=text]:focus{
+  outline: 0;
+}
+
+input[type=submit]{
+  position: absolute;
+  right: 15px;
+  padding: .75em .45em;
+  background-color: white;
+  border: 1px solid black !important;
+  border-radius: 2.5px;
+  cursor: pointer;
+}
+
+input[type=submit]:focus{
+  outline: 0;
+}
+
+input[type=submit]:hover{
+  outline: 0;
+  box-shadow: 1px 1px 1px blue;
+}

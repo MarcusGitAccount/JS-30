@@ -5,6 +5,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
+h3{
+  text-align: center;
+}
+
 .tapas-div{
   position: absolute;
   width: 300px;
@@ -13,10 +17,13 @@
 }
 
 #tapas-ul>li {
-  display: flex;
-  flex-direction: row;
+  position: relative;
+  list-style-type: none;
+  padding: .5em 0;
+  border-bottom: .5px solid black;
 }
 
 #tapas-ul>li>.fa{
-  flex: 0.1;
+  position: absolute;
+  right: 0;
 }
