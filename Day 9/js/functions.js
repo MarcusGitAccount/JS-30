@@ -52,3 +52,7 @@ console.count(23);
 console.count(23);
 
 console.timeEnd('Starting timing');
+
+const array = [document.querySelector('p'), document.querySelector('p')];
+
+console.table(array);
