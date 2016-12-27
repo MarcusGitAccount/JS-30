@@ -12,7 +12,7 @@
     <h3>LOCAL TAPAS</h3>
     <br>
     <ul id="tapas-ul">
-      <li id="loading">Loading tapas ... </li>
+      <li id="li-start">Loading tapas ... </li><!--
       <li>
         <input type="checkbox" value="Fish" title="Select">
         <span>Fish</span>
@@ -27,13 +27,14 @@
         <input type="checkbox" value="Fish" title="Select">
         <span>Tuna</span>
         <i class="fa fa-trash-o trash-click" aria-hidden="true" title="Delete entry"></i>
-      </li>    
+      </li>  -->  
     </ul>
     <br><br>
     <form>
-      <input type="text" placeholder="Enter Tapas" name="tapasName" maxlength="30" required></input>
-      <input type="submit" value="+ Add tapas">
+      <input type="text" placeholder="Enter Tapas" name="tapasName" maxlength="30" required autocomplete="off"></input>
+      <input class="btn" type="submit" value="+ Add tapas">
     </form>
+    <input class="btn" type="button" value="Delete all" title="Delete all entries">
   </div>
   <script src="../js/functions.js"></script>
 </body>
