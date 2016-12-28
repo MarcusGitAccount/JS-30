@@ -7,8 +7,8 @@ bands.sort((a, b) => {
   let articleA = a.match(articleMatch) || '';
   let articleB = b.match(articleMatch) || '';
 
-  a = a.replace(articleA[0], '');
-  b = b.replace(articleB[0], '');
+  a = a.replace(articleA[0].trim(), '');
+  b = b.replace(articleB[0].trim(), '');
 
   if (a.toLowerCase() > b.toLowerCase())
     return 1;
