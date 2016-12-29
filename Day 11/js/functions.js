@@ -10,6 +10,39 @@ let volumeIcon = player.querySelector('#volume-i');
 let timeset = player.querySelector('#time');
 let fullscreenIcon = player.querySelector('#fullscreen');
 let progressMouseDown = false;
+let trueFalseVolumeIcon = {
+  '0': "fa fa-volume-off",
+  '1': "fa fa-volume-up"
+};
+let trueFalseVolume = {
+  '0': 0,
+  '1': ranges[1].value
+}
+let volumeIsUp = 1;
+let keydownEventsMap = {
+  '32': function(){
+    video[video.paused ? 'play' : 'pause']();
+  },
+  '38': function(){
+    ranges[1].value++; // volume range, range[0] is for acceleration
+    video.volume = ranges[1].value / 100;
+    volumeIcon.className = "";
+    volumeIcon.className = video.volume > 0 ? (video.volume < 0.5 ? "fa fa-volume-down" : "fa fa-volume-up"): "fa fa-volume-off";
+  },
+  '40': function(){
+    ranges[1].value--; 
+    video.volume = ranges[1].value / 100;
+    volumeIcon.className = "";
+    volumeIcon.className = video.volume > 0 ? (video.volume < 0.5 ? "fa fa-volume-down" : "fa fa-volume-up"): "fa fa-volume-off";
+  },
+  '39': function(){
+    video.currentTime++;
+  },
+  '37': function(){
+    video.currentTime--;
+  }
+}
+
 
 function toggleFullscreen(e){
   if (!video.webkitDisplayingFullscreen)
@@ -18,10 +51,9 @@ function toggleFullscreen(e){
     video.webkitExitFullScreen();
 }
 
-function togglePauseKeyDown(e){
-  if (e.keyCode === 32){
-    video[video.paused ? 'play' : 'pause']();
-  }
+function keydownEvents(e){
+  if (keydownEventsMap.hasOwnProperty(e.keyCode))
+    keydownEventsMap[e.keyCode]();
 }
 
 function togglePauseClick(e){
@@ -83,6 +115,13 @@ function getProgressTime(e){
   video.currentTime = time;
 }
 
+function volumeIconClick(e){
+  volumeIsUp = (++volumeIsUp) % 2;
+  ranges[1].value = trueFalseVolume[volumeIsUp];
+  volumeIcon.className = trueFalseVolumeIcon[volumeIsUp];
+  video.volume = trueFalseVolume[volumeIsUp] / 100;
+}
+
 video.addEventListener('dblclick', toggleFullscreen);
 video.addEventListener('click', togglePauseClick);
 video.addEventListener('pause', () => toggle.innerHTML = "&#9658;");
@@ -92,10 +131,11 @@ video.addEventListener('timeupdate', handleProgressBar);
 toggle.addEventListener('click', togglePauseClick);
 ranges[0].addEventListener('input', changePlaybackRate)
 ranges[1].addEventListener('input', changeVolumeIcon)
+volumeIcon.addEventListener('click', volumeIconClick);
 skipButtons.forEach(button => button.addEventListener('click', skipVideoTime));
 fullscreenIcon.addEventListener('click', toggleFullscreen);
 progress.addEventListener('click', getProgressTime);
 progress.addEventListener('mousemove', (e) => progressMouseDown && getProgressTime(e));
 progress.addEventListener('mousedown', (e) => progressMouseDown = true);
 progress.addEventListener('mouseup', (e) => progressMouseDown = false);
-window.addEventListener('keydown', togglePauseKeyDown);
+window.addEventListener('keydown', keydownEvents);

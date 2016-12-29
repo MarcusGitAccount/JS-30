@@ -2,7 +2,12 @@ html {
   box-sizing: border-box;
 }
 
+::-webkit-media-controls {
+  display:none !important;
+}
+
 body {
+  overflow: hidden;
   padding: 0;
   display:flex;
   background:#7A419B;

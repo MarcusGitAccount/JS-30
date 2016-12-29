@@ -1,0 +1,46 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.webcam-video{
+  position: absolute;
+  right: 0;
+  top: 5%;
+  height: 25%;
+  width: 25%;
+}
+
+.webcam-photo{
+  position: absolute;
+  left: calc(50% - 320px);
+  top: 10%;
+  z-index: -1;
+}
+
+.webcam-video{
+  position: absolute;
+  right: 0;
+  top: 5%;
+  height: 25%;
+  width: 25%;
+}
+
+.photos-taken{
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  padding:2rem;
+  max-height: 50px;
+  margin: 2rem auto;
+  border-radius:2px;
+}
+
+.photos-taken  img {
+  width:100px;
+  overflow-x: scroll;
+  padding:0.8rem 0.8rem 2.5rem 0.8rem;
+  box-shadow:0 0 3px rgba(0,0,0,0.2);
+  background:white;
+}
