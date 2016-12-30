@@ -5,7 +5,7 @@
 }
 
 .webcam-video{
-  position: absolute;
+  position: relative;
   right: 0;
   top: 5%;
   height: 25%;
@@ -13,9 +13,9 @@
 }
 
 .webcam-photo{
-  position: absolute;
+  position: relative;
   left: calc(50% - 320px);
-  top: 10%;
+  top: 15%;
   z-index: -1;
 }
 
@@ -28,8 +28,8 @@
 }
 
 .photos-taken{
-  position: absolute;
-  bottom: 100px;
+  position: relative;
+  bottom: 50px;
   left: 0;
   padding:2rem;
   max-height: 50px;
@@ -37,10 +37,18 @@
   border-radius:2px;
 }
 
-.photos-taken  img {
-  width:100px;
+.photos-taken img {
+  width: 100px;
   overflow-x: scroll;
   padding:0.8rem 0.8rem 2.5rem 0.8rem;
   box-shadow:0 0 3px rgba(0,0,0,0.2);
   background:white;
+}
+
+span {
+  position: fixed;
+  top: 2%;
+  left: 50%;
+  color: red;
+  font-size: 72px;
 }

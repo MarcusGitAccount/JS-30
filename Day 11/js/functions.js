@@ -26,14 +26,13 @@ let keydownEventsMap = {
   '38': function(){
     ranges[1].value++; // volume range, range[0] is for acceleration
     video.volume = ranges[1].value / 100;
-    volumeIcon.className = "";
-    volumeIcon.className = video.volume > 0 ? (video.volume < 0.5 ? "fa fa-volume-down" : "fa fa-volume-up"): "fa fa-volume-off";
+    volumeIconChangeClassName();
+
   },
   '40': function(){
     ranges[1].value--; 
     video.volume = ranges[1].value / 100;
-    volumeIcon.className = "";
-    volumeIcon.className = video.volume > 0 ? (video.volume < 0.5 ? "fa fa-volume-down" : "fa fa-volume-up"): "fa fa-volume-off";
+    volumeIconChangeClassName();
   },
   '39': function(){
     video.currentTime++;
@@ -43,6 +42,10 @@ let keydownEventsMap = {
   }
 }
 
+function volumeIconChangeClassName(){
+  volumeIcon.className = "";
+  volumeIcon.className = video.volume > 0 ? (video.volume < 0.5 ? "fa fa-volume-down" : "fa fa-volume-up"): "fa fa-volume-off";
+}
 
 function toggleFullscreen(e){
   if (!video.webkitDisplayingFullscreen)
@@ -61,9 +64,8 @@ function togglePauseClick(e){
 }
 
 function changeVolumeIcon(e){
-  volumeIcon.className = "";
   video.volume = this.value / 100;
-  volumeIcon.className = video.volume > 0 ? (video.volume < 0.5 ? "fa fa-volume-down" : "fa fa-volume-up"): "fa fa-volume-off";
+  volumeIconChangeClassName();
 }
 
 function changePlaybackRate(e){

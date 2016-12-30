@@ -6,17 +6,35 @@
   <title>19/30</title>
 </head>
 <body>
-  <div class="photobooth">
-    <div class="controls"></div>
 
-    <input type="button" value="Take photo">
+  <div class="photobooth">
+    <input id="simple-button" type="button" value="Take photo">
+    <input id="timer-button"  type="button" value="5s">
+    <span id="timer"></span>
+    <div class="controls">
+      <label for="rmin">Red minim</label>
+      <input name="rmin" type="range" value"128" min="0" max="255" step="1">
+      <label for="rmax">Red maxim</label>
+      <input name="rmax" type="range" value"128" min="0" max="255" step="1"><br>
+
+      <label for="gmin">Green minim</label>
+      <input name="gmin" type="range" value"128" min="0" max="255" step="1">
+      <label for="gmaxx">Green maxim</label>
+      <input name="gmax" type="range" value"128" min="0" max="255" step="1"><br>
+
+      <label for="bmin">Blue minim</label>
+      <input name="bmin" type="range" value"128" min="0" max="255" step="1">
+      <label for="bmax">Blue maxim</label>
+      <input name="bmax" type="range" value"128" min="0" max="255" step="1"><br>
+    </div>
+
     <video class="webcam-video"></video>
     <canvas class="webcam-photo"></canvas>
     <div class="photos-taken">
-      
-    </div>
-    <audio src="../sounds/camera_snap.wav" hidden="true"></audio>
+
   </div>
+  <audio src="../sounds/camera_snap.wav" hidden="true"></audio>
   <script src="../js/functions.js"></script>
+
 </body>
 </html>
