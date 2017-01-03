@@ -116,6 +116,7 @@
 
 .speech textarea {
    width: 100%;
+   font-size: 15px;
  }
 
 .speech span {

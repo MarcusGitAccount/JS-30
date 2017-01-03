@@ -10,7 +10,7 @@
 <body>
   <div class="container">
     <div class="speech">
-      <h1>Voicinator</h1>
+      <h1>Voicinator 2000</h1>
       <select name="voices" id="voices-select">
         <option value="Voice1">Voice1</option>
         <option value="Voice2">Voice2</option>
@@ -20,10 +20,10 @@
       <div id="inputs-range">
         <label for="volume">Volume</label>
         <span data-for="volume">50</span>
-        <input name="volume" type="range" min="0"   max="1"  step="0.01" data-multiplier="100" value="0.3"><br>
+        <input name="volume" type="range" min="0"   max="1"  step="0.01" data-multiplier="100" value="0.3"><br><!--
         <label for="rate">Rate</label>
         <span data-for="rate">50</span>
-        <input name="rate"   type="range" min="0.1" max="10" step="0.1" data-multiplier="10"><br>
+        <input name="rate"   type="range" min="0.1" max="10" step="0.1" data-multiplier="10"><br>-->
         <label for="pitch">Pitch</label>
         <span data-for="pitch">50</span>
         <input name="pitch"  type="range" min="0"   max="2"  step="0.01" data-multiplier="50"><br>
@@ -31,8 +31,8 @@
 
       <textarea name="speech-text" id="#speechtext" cols="40" rows="10"></textarea><br>
       <div class="input-text">
-        <input data-action="start" type="button" value="Start">
-        <input data-action="stop"  type="button" value="Stop">
+        <input data-action="resume" type="button" value="Start">
+        <input data-action="pause"  type="button" value="Stop">
       </div>
     </div>
   </div>
