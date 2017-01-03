@@ -23,6 +23,8 @@
 .speech h1{
   font-family: 'Pacifico', cursive;
   text-align: center;
+  text-shadow: black 3px 3px 2px;
+  color: #88C057;
   padding: .25em;
 }
 
@@ -31,32 +33,91 @@
   font-size: 16px;
   padding: .35em 2.75em;
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid #88C057;
+  color: black;
   border-radius: 5px;;
+  cursor: pointer;
+}
+
+.speech input[type=button]:active, 
+.speech input[type=button]:focus, 
+.speech input[type=button]:hover{
+  outline: none;
 }
 
 .speech input[type=range], select{
-   width: 100%;
+  width: 100%;
+}
+
+.speech input[type=range]{
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+.speech input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  height: 14px;
+  width: 14px;
+  background-color: #88C057;
+  cursor: pointer;
+  margin-top: -5px;
+}
+
+.speech input[type=range]::-webkit-slider-runnable-track{
+  width: 100%;
+  height: 6px;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 1.5px;
+}
+
+.speech input[type=range]:focus{
+  outline: none;
  }
+
+.speech select {
+  -webkit-appearance: none;
+  border: 1px solid #88C057;
+  border-radius: 5px;
+  background: url('../icons/down-arrow.png');
+  background-repeat: no-repeat;
+  background-position: 95.5% 50%;
+  background-size: 17.5px 17.5px;
+  padding: .35em 1em;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.speech select:focus {
+  outline: none;
+}
 
 .input-text{
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
- }
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
 .speech input[type=button]{
-   margin: 10px;
- }
+  margin: 10px;
+}
 
- #inputs-range{
-   margin: 25px 0;
- }
+#inputs-range{
+  margin: 25px 0;
+}
 
- .container>.speech>#inputs-range label {
-   font-size: 12px;
- }
+.container>.speech>#inputs-range label {
+  font-size: 12px;
+  display: inline;
+  font-weight: bold;
+}
 
- textarea {
+.speech textarea {
    width: 100%;
+ }
+
+.speech span {
+   font-size: 12px;
  }
