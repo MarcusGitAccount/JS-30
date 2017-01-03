@@ -6,19 +6,19 @@
 }
 
 .speech{
-   position: relative;
-   max-width: 500px;
-   flex-direction: column;
-   min-height: 50vh;
- }
+  position: relative;
+  max-width: 500px;
+  flex-direction: column;
+  min-height: 50vh;
+}
 
 .container{
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   min-height: 90vh;
- }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
 
 .speech h1{
   font-family: 'Pacifico', cursive;
