@@ -47,4 +47,4 @@ function windowScroll(e){
   }
 }
 
-window.addEventListener('scroll', debounce(windowScroll, 10));
+window.addEventListener('scroll', debounce(windowScroll, 0));

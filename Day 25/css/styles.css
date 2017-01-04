@@ -1,0 +1,29 @@
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.first{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff6f00;
+}
+
+.second{
+  width: 50%;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #b71c1c;
+}
+
+.third{
+  width: 25%;
+  min-height: 25vh;
+  background-color: #ffd600;
+}
