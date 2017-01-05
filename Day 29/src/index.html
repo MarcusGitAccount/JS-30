@@ -9,20 +9,22 @@
 <body>
 
   <nav>
-    <input type="button" value="30 sec" data-seconds="30">
+    <input type="button" value="10 sec" data-seconds="10">
     <input type="button" value="Work 5" data-seconds="300">
-    <input type="button" value="Quick 15" data-seconds="450">
+    <input type="button" value="Quick 15" data-seconds="900">
     <input type="button" value="Snack 20" data-seconds="1200">
     <input type="button" value="Lunch Break" data-seconds="3600">
     <form>
-      <input type="text" placeholder="Enter minutes" autocomplete="off" maxlength="3">
+      <input type="text" placeholder="Enter minutes" autocomplete="off" maxlength="3" 
+      pattern="[\d]+" title="">
     </form>
   </nav>
 
   <div id="time-div">
-    <p contenteditable="true">Insert activity name</p>
-    <div id="countdown">00:00:30</div>
-    <div id="back-time">See you at God knows when.</div>
+    <p contenteditable="true" id="activity">Insert activity name</p>
+    <div id="countdown">00:00:00</div>
+    <div id="back-time"></div>
+    <p id="current-date"></p>
   </div>
 
   <script src="../js/functions.js"></script>

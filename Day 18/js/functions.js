@@ -13,7 +13,7 @@ function mapAsTime(seconds){
   let numbers = Array(3);
 
   numbers[2] = seconds % 60 < 10 ? '0' + seconds % 60 : seconds % 60;
-  numbers[1] = Math.round(seconds / 60) % 60 < 10 ? '0' + Math.round(seconds / 60) % 60 : Math.round(seconds / 60) % 60;
+  numbers[1] = Math.trunc(seconds / 60) % 60 < 10 ? '0' + Math.trunc(seconds / 60) % 60 : Math.trunc(seconds / 60) % 60;
   numbers[0] = Math.trunc(seconds / 3600) < 10 ? '0' + Math.trunc(seconds / 3600)  : Math.trunc(seconds / 3600);
 
   console.log(numbers);
