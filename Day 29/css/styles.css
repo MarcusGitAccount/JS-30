@@ -1,0 +1,100 @@
+
+:root{
+  --nav-height: 5.5vh;
+  --input-border: 5px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  background: url('../images/background.jpg') no-repeat;
+  overflow-x: hidden;
+}
+
+nav * {
+  text-transform: uppercase;
+  flex-grow: 1;
+  font-size: 16px;
+  letter-spacing: .25px;
+}
+
+nav>form>input[type=text]:hover {
+  outline: #607d8b;
+}
+
+nav>form>input[type=text] {
+  color: #607d8b;
+  border: var(--input-border) solid #607d8b;
+}
+
+nav input[type=button] {
+  border: 1px solid #37474f ;
+  background-color: #607d8b;
+  color: white;
+}
+
+nav 
+input[type="button"]:hover,
+input[type="button"]:active,
+input[type="button"]:focus {
+  outline: none;
+  cursor: pointer;
+  background-color: #37474f;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  min-height: calc(var(--nav-height) + 2 * var(--input-border));
+  width: 100vw;
+}
+
+nav form {
+  position: relative;
+  min-height: var(--nav-height);
+
+}
+
+nav form> input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: var(--nav-height);
+  text-align: center;
+}
+
+#time-div {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - var(--nav-height) - 2.5vh);
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+#countdown {
+  font-size: 100px;
+  letter-spacing: 12.5px;
+  color: white;
+  text-shadow: #263238 7px 10px 15px;
+}
+
+#back-time{
+  margin-top: calc(var(--nav-height) * 2);
+  font-size: 40px;
+  letter-spacing: 7.5px;
+  color: white;
+  font-weight: 500;
+}
+
+p {
+  font-size: 40px;
+  letter-spacing: 7.5px;
+  color: white;
+  margin-bottom: calc(var(--nav-height) * 2);
+}
