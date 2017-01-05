@@ -9,6 +9,7 @@ let activity = timeDiv.querySelector('#activity');
 let countdownDiv = timeDiv.querySelector('#countdown');
 let backTime = timeDiv.querySelector('#back-time');
 let currentDate = timeDiv.querySelector('#current-date');
+let title = document.querySelector('head>title');
 
 function countdownTimer(){
   this.setTimerXTimes = function(delay, times, callback, endfunction){
@@ -23,6 +24,7 @@ function countdownTimer(){
         }
         finally {
           clearInterval(this.interval);
+          title.innerHTML = countdown.innerHTML = mapAsTime(0);
         }
       }
     };
@@ -32,7 +34,7 @@ function countdownTimer(){
 }
 
 function countdown(){
-  countdownDiv.innerHTML = mapAsTime(this.times--);
+  title.innerHTML = countdownDiv.innerHTML = mapAsTime(this.times--);
 }
 
 function mapAsTime(seconds){
@@ -78,6 +80,7 @@ function updateDate(){
 function formSubmit(e){
   let seconds = parseInt(inputText.value) * 60;
 
+  activity.innerHTML = 'Insert activity name';
   clearInterval(timeobject.interval);
   timeobject.setTimerXTimes(1000, seconds, countdown, updateDate);
   backTime.innerHTML = `See you back at ${seeYouAt(seconds)}`;

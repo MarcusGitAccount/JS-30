@@ -93,6 +93,7 @@ nav form> input {
 }
 
 #activity {
+  max-height: 60px;
   font-size: 40px;
   letter-spacing: 7.5px;
   color: white;
