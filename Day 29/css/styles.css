@@ -98,6 +98,15 @@ nav form> input {
   letter-spacing: 7.5px;
   color: white;
   margin-bottom: calc(var(--nav-height) * 2);
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  border-bottom: 1px solid white;
+  padding-bottom: .5em;
+}
+
+#activity::-webkit-input-placeholder{
+  color: white;
 }
 
 #current-date {

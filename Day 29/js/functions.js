@@ -18,18 +18,13 @@ function countdownTimer(){
     this.interval = setInterval(callback.bind(this), delay);
 
     let timeoutFunction = function(){
-      if (this.times <= 1){
-        try {
-          endfunction();
-        }
-        finally {
-          clearInterval(this.interval);
-          title.innerHTML = countdown.innerHTML = mapAsTime(0);
-        }
-      }
+      endfunction();
+      clearInterval(this.interval);
+      title.innerHTML = countdownDiv.innerHTML = mapAsTime(0);
+      console.log(this.times, countdownDiv.innerHTML);
     };
 
-    setTimeout(timeoutFunction.bind(this), (times + 1) * delay);
+    this.timeout = setTimeout(timeoutFunction.bind(this), (times) * delay);
   }
 }
 
@@ -48,8 +43,9 @@ function mapAsTime(seconds){
 }
 
 function buttonTimeClick(e){
-  activity.innerHTML = this.value;
+  activity.value = this.value;
   clearInterval(timeobject.interval);
+  clearTimeout(timeobject.timeout);
   timeobject.setTimerXTimes(1000, parseInt(this.dataset.seconds), countdown, updateDate);
   backTime.innerHTML = `See you back at ${seeYouAt(this.dataset.seconds)}`;
   updateDate();
@@ -82,6 +78,7 @@ function formSubmit(e){
 
   activity.innerHTML = 'Insert activity name';
   clearInterval(timeobject.interval);
+  clearTimeout(timeobject.timeout);
   timeobject.setTimerXTimes(1000, seconds, countdown, updateDate);
   backTime.innerHTML = `See you back at ${seeYouAt(seconds)}`;
   updateDate();
