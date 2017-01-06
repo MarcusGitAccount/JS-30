@@ -24,7 +24,7 @@ function countdownTimer(){
       console.log(this.times, countdownDiv.innerHTML);
     };
 
-    this.timeout = setTimeout(timeoutFunction.bind(this), (times) * delay);
+    this.timeout = setTimeout(timeoutFunction.bind(this), (times + 1) * delay);
   }
 }
 
