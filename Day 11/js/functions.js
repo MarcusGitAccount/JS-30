@@ -122,6 +122,7 @@ function volumeIconClick(e){
   ranges[1].value = trueFalseVolume[volumeIsUp];
   volumeIcon.className = trueFalseVolumeIcon[volumeIsUp];
   video.volume = trueFalseVolume[volumeIsUp] / 100;
+  this.stuff = 'ew';
 }
 
 video.addEventListener('dblclick', toggleFullscreen);

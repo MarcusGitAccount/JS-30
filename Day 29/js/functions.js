@@ -66,7 +66,7 @@ function updateDate(){
   let dateObject = new Date();
   let items = Array(3);
 
-  items[0] = dateObject.getUTCDay() + 1;
+  items[0] = dateObject.getUTCDate();
   items[1] = dateObject.getUTCMonth() + 1;
   items[2] = dateObject.getFullYear();
 

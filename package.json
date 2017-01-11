@@ -1,0 +1,8 @@
+{
+  "name": "package_for_installing_modules",
+  "main": "server.js",
+  "description": "Javascript 30 problems solutions",
+  "dependencies": {
+    "express": "4.14.0"
+  }
+}
