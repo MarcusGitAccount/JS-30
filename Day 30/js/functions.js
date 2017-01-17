@@ -44,14 +44,13 @@ function moleClick(e) {
 }
 
 function startGame() {
-  let time = 10000 || parseInt(textbox.value) * 1000;
+  let time = parseInt(textbox.value) * 1000 || 10000;
 
-  console.log(time);
   timeUp = false;
   scoreBoard.innerHTML = '0';
   setTimeout(() => {
     timeUp = true;
-  }, 10000);
+  }, time);
   moleUp();
 }
 

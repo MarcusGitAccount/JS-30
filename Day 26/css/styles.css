@@ -18,13 +18,16 @@ html {
   list-style-type: none;
 }
 
-.main-ul>li {
+.main-ul > li.pill {
   position: relative;
   margin: 0 5em;
   font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.main-ul>li a{
+.main-ul > li.pill a{
   text-decoration: none;
   padding: .5em 2em;
   color: white;
@@ -36,18 +39,67 @@ html {
 .dropdown {
   position: absolute;
   top: 30px;
-  padding: 20px;
+  left: -30px;
+  padding: 10px;
+  opacity: 1;
+  display: none;
+  opacity: 0;
+  transition: .25s all;
+  overflow: hidden;
+  will-change: transform;
+  transform: translateX(20px);
 }
+
+.enter {
+  display: block;
+}
+
+.enter-active{
+  opacity: 1;
+}
+
 
 .about {
   min-width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateX(-150px);
+  transform: translateX(-250px);
 }
 
 .about>img {
   float: left;
   margin-right: 15px;
+}
+
+.courses {
+  min-width: 200px;
+}
+
+.courses > li, .links > li {
+  padding: 1em 0;
+  display: block;
+}
+
+.links {
+  min-width: 200px;
+  padding: 1em 0;
+}
+
+.follower {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 10px;
+  transition:all 0.3s, opacity 0.1s, translate 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform-origin: 50% 0;
+}
+
+.follower.show {
+  opacity: 1;
 }
